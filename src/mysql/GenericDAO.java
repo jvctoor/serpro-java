@@ -2,7 +2,7 @@ package mysql;
 
 import java.util.List;
 
-public interface DAO<T> {
+public interface GenericDAO<T> {
 
     void save(T entity);
     T findById(int id);
