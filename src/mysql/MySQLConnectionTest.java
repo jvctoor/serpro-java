@@ -1,16 +1,18 @@
 package mysql;
 
-import java.sql.*;
+import java.sql.SQLException;
 import java.util.List;
 
 public class MySQLConnectionTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
-        UsuarioDAO userDao = new UsuarioDAO();
+        UsuarioDAO_JDBC userDao = new UsuarioDAO_JDBC();
         List<Usuario> users = userDao.findAll();
 
-        System.out.println(users);
+        Usuario userByID = userDao.getUsuarioByID(1);
+
+        System.out.println(userByID);
 
 
     }
