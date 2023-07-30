@@ -1,8 +1,12 @@
 package mysql;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Usuario {
+    @Id
     private int id;
     private String nome;
     private String email;
