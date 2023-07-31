@@ -48,7 +48,7 @@ public class UsuarioDAO_JDBC {
 
     }
 
-    public Usuario getUsuarioByID(int id) throws SQLException {
+    public static Usuario getUsuarioByID(int id) throws SQLException {
         String query = "select * from usuarios where id =" + Integer.toString(id);
 
         try {

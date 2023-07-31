@@ -1,14 +1,23 @@
 package mysql;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name="usuarios")
 public class Usuario {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private String email;
     private int idade;
+    @Column(name = "data_cadastro")
     private Date dataCadastro;
+
+    public Usuario() {
+
+    }
 
     // Construtor
     public Usuario(int id, String nome, String email, int idade, Date dataCadastro) {
