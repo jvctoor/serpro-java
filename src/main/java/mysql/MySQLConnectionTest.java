@@ -18,6 +18,15 @@ public class MySQLConnectionTest {
 
         System.out.println(users);
 
+        Usuario joao = new Usuario();
+        joao.setNome("João Victor");
+        joao.setEmail("jvctor23@gmail.com");
+        joao.setIdade(20);
+
+
+        UsuarioDAO_JPA dao_jpa = new UsuarioDAO_JPA();
+        System.out.println(dao_jpa.insert(joao).toString());
+
 
     }
 
