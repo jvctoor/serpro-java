@@ -1,5 +1,6 @@
 package mysql;
 
+
 import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
@@ -7,11 +8,11 @@ import java.util.List;
 
 public class UsuarioDAO_JDBC {
 
-    String url = "jdbc:mysql://127.0.0.1:3306/serpro?useSSL=false";
-    String user = "root";
-    String password = "15902332";
+    static String url = "jdbc:mysql://127.0.0.1:3306/serpro?useSSL=false";
+    static String user = "root";
+    static String password = "15902332";
 
-    public List<Usuario> findAll() {
+    public static List<Usuario> findAll() {
 
 
         String query = "select * from usuarios;";
