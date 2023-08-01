@@ -25,7 +25,7 @@ public class UsuarioDAO_JDBC {
             List<Usuario> usuarios = new ArrayList<>();
 
             while(rs.next()) {
-                Usuario usuario = new Usuario(rs.getInt("id"),
+                Usuario usuario = new Usuario(rs.getLong("id"),
                         rs.getString("nome"),
                         rs.getString("email"),
                         rs.getInt("idade"),
@@ -58,7 +58,7 @@ public class UsuarioDAO_JDBC {
 
             rs.next();
 
-            Usuario usuario = new Usuario(rs.getInt("id"),
+            Usuario usuario = new Usuario(rs.getLong("id"),
                     rs.getString("nome"),
                     rs.getString("email"),
                     rs.getInt("idade"),

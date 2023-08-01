@@ -25,7 +25,7 @@ public class MySQLConnectionTest {
 
 
         UsuarioDAO_JPA dao_jpa = new UsuarioDAO_JPA();
-        System.out.println(dao_jpa.insert(joao).toString());
+        //System.out.println(dao_jpa.insert(joao).toString());
 
 
     }

@@ -8,7 +8,7 @@ import java.util.Date;
 
 public class UsuarioTest {
 
-    Usuario joao = new Usuario(1, "João Victor", "jvctor23@gmail.com", 20, new Date());
+    Usuario joao = new Usuario(1L, "João Victor", "jvctor23@gmail.com", 20, new Date());
 
     @Test
     @DisplayName("Usuário precisa ter 18 anos")

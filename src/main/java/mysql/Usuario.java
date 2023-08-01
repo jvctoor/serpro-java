@@ -8,7 +8,7 @@ import java.util.Date;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String nome;
     private String email;
     private int idade;
@@ -20,7 +20,7 @@ public class Usuario {
     }
 
     // Construtor
-    public Usuario(int id, String nome, String email, int idade, Date dataCadastro) {
+    public Usuario(Long id, String nome, String email, int idade, Date dataCadastro) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -29,11 +29,11 @@ public class Usuario {
     }
 
     // Getters e Setters
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
