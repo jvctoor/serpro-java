@@ -19,7 +19,7 @@ public class MySQLConnectionTest {
         System.out.println(users);
 
         Usuario joao = new Usuario();
-        joao.setNome("João Victor");
+        joao.setNome("gabriel");
         joao.setEmail("jvctor23@gmail.com");
         joao.setIdade(20);
 
