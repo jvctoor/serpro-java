@@ -2,32 +2,40 @@ package mysql;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import utils.HibernateUtil;
 
 import java.sql.SQLException;
 import java.util.List;
 
+
 public class MySQLConnectionTest {
 
-    public static void main(String[] args) throws SQLException {
-
+    @Test
+    @DisplayName("Get all - Hibernate")
+    void hibernateGetAllUsers() {
         SessionFactory factory = HibernateUtil.getSessionFactory();
-
         UsuarioDAO_Hibernate dao = new UsuarioDAO_Hibernate(factory);
         List<Usuario> users = dao.findAll();
+        Assertions.assertNotEquals(null, users);
+    }
 
-        System.out.println(users);
+    @Test
+    @DisplayName("Get all - JDBC")
+    void jdbcGetAllUsers() {
+        UsuarioDAO_JDBC dao = new UsuarioDAO_JDBC();
+        List<Usuario> users = dao.findAll();
+        Assertions.assertNotEquals(null, users);
+    }
 
-        Usuario joao = new Usuario();
-        joao.setNome("gabriel");
-        joao.setEmail("jvctor23@gmail.com");
-        joao.setIdade(20);
-
-
-        UsuarioDAO_JPA dao_jpa = new UsuarioDAO_JPA();
-        //System.out.println(dao_jpa.insert(joao).toString());
-
-
+    @Test
+    @DisplayName("Get by id - JPA")
+    void jpaGetUserById() throws Exception {
+        UsuarioDAO_JPA dao = new UsuarioDAO_JPA();
+        Usuario user = dao.getById(15L);
+        Assertions.assertEquals(15L, user.getId());
     }
 
 }

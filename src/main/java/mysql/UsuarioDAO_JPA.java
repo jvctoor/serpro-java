@@ -20,7 +20,7 @@ public class UsuarioDAO_JPA {
 
         try {
             em.getTransaction().begin();
-            if (usuario.getId() == 0) {
+            if (usuario.getId() == null) {
                 em.persist(usuario); // insert
             } else {
                 if(!em.contains(usuario)) {
@@ -63,8 +63,7 @@ public class UsuarioDAO_JPA {
         EntityManager em = getEm();
 
         try {
-            Usuario user = em.find(Usuario.class, id);
-            return user;
+            return em.find(Usuario.class, id);
         } catch (Exception e) {
             throw new Exception(e);
         } finally {
