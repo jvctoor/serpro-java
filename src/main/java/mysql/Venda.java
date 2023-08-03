@@ -1,34 +1,40 @@
 package mysql;
 
 
+import org.hibernate.engine.internal.Cascade;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "venda")
-@SequenceGenerator(name = "vendaSec", sequenceName = "vendaSec", initialValue = 1, allocationSize = 1)
+//@SequenceGenerator(name = "vendaSec", sequenceName = "vendaSec", initialValue = 1, allocationSize = 1)
 public class Venda {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vendaSec")
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vendaSec")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Temporal(TemporalType.DATE)
+    @Column(name="data_da_venda")
     private Date data_venda;
 
     private Double valor_total;
 
-    private Long id_usuario;
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     public Venda() {
 
     }
 
-    public Venda(Long id, Date data_venda, Double valor_total, Long id_usuario) {
+    public Venda(Long id, Date data_venda, Double valor_total, Usuario id_usuario) {
         this.id = id;
         this.data_venda = data_venda;
         this.valor_total = valor_total;
-        this.id_usuario = id_usuario;
+        this.usuario = id_usuario;
     }
 
     public Long getId() {
@@ -43,8 +49,8 @@ public class Venda {
         return this.valor_total;
     }
 
-    public Long getIdUsuario() {
-        return this.id_usuario;
+    public Usuario getIdUsuario() {
+        return this.usuario;
     }
 
     public void setId(Long id) {
@@ -59,8 +65,8 @@ public class Venda {
         this.valor_total = valor;
     }
 
-    public void setIdUsuario(Long id) {
-        this.id_usuario = id;
+    public void setIdUsuario(Usuario id) {
+        this.usuario = id;
     }
 
 

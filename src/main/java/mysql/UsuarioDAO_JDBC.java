@@ -28,8 +28,7 @@ public class UsuarioDAO_JDBC {
                 Usuario usuario = new Usuario(rs.getLong("id"),
                         rs.getString("nome"),
                         rs.getString("email"),
-                        rs.getInt("idade"),
-                        rs.getDate("data_cadastro"));
+                        rs.getInt("idade"));
 
                 usuarios.add(usuario);
 
@@ -61,8 +60,7 @@ public class UsuarioDAO_JDBC {
             Usuario usuario = new Usuario(rs.getLong("id"),
                     rs.getString("nome"),
                     rs.getString("email"),
-                    rs.getInt("idade"),
-                    rs.getDate("data_cadastro"));
+                    rs.getInt("idade"));
 
             con.close();
             st.close();

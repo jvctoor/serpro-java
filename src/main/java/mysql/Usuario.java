@@ -12,20 +12,18 @@ public class Usuario {
     private String nome;
     private String email;
     private int idade;
-    @Column(name = "data_cadastro")
-    private Date dataCadastro;
+
 
     public Usuario() {
 
     }
 
     // Construtor
-    public Usuario(Long id, String nome, String email, int idade, Date dataCadastro) {
+    public Usuario(Long id, String nome, String email, int idade) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.idade = idade;
-        this.dataCadastro = dataCadastro;
     }
 
     // Getters e Setters
@@ -61,13 +59,6 @@ public class Usuario {
         this.idade = idade;
     }
 
-    public Date getDataCadastro() {
-        return dataCadastro;
-    }
-
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
 
     @Override
     public String toString() {
@@ -76,7 +67,6 @@ public class Usuario {
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", idade=" + idade +
-                ", dataCadastro=" + dataCadastro +
                 '}';
     }
 }
