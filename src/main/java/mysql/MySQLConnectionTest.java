@@ -1,14 +1,12 @@
 package mysql;
 
-import org.hibernate.Session;
+import mysql.model.Usuario;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Nested;
 import utils.HibernateUtil;
 
-import java.sql.SQLException;
 import java.util.List;
 
 

@@ -1,7 +1,5 @@
-package mysql;
+package mysql.model;
 
-
-import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
 import java.util.Date;

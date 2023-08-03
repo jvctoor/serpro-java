@@ -1,7 +1,8 @@
 package mysql;
 
 
-import javax.xml.transform.Result;
+import mysql.model.Usuario;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

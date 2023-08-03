@@ -1,8 +1,8 @@
 package mysql;
 
+import mysql.model.Usuario;
+import mysql.model.Venda;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ public class VendaUsuarioTest {
         VendaDAO_JPA dao = new VendaDAO_JPA();
 
         UsuarioDAO_JPA usuario_dao = new UsuarioDAO_JPA();
-        Usuario usuario = usuario_dao.getById(1L);
+        Usuario usuario = usuario_dao.getById(3L);
 
         Venda venda = new Venda();
         venda.setValorTotal(220.30);

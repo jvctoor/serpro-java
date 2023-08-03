@@ -1,10 +1,10 @@
 package mysql;
 
+import mysql.model.Usuario;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.sql.SQLException;
-import java.util.List;
 
 public class UsuarioDAO_JPA {
 

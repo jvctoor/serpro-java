@@ -1,4 +1,4 @@
-package mysql;
+package mysql.model;
 
 import javax.persistence.*;
 import java.util.Date;

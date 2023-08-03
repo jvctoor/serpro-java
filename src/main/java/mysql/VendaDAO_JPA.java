@@ -1,11 +1,10 @@
 package mysql;
 
+import mysql.model.Venda;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
-import java.rmi.server.ExportException;
-import java.util.List;
 
 public class VendaDAO_JPA {
 

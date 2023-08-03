@@ -9,8 +9,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 
-        <class>mysql.Usuario</class>
-        <class>mysql.Venda</class>
+        <class>mysql.model.Usuario</class>
+        <class>mysql.model.Venda</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
