@@ -1,5 +1,8 @@
 package problems;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     public boolean isPalindromeNumber(int x) {
         if (x < 0) {
@@ -21,6 +24,15 @@ class Solution {
 
         return false;
 
+    }
+
+    public boolean containsDuplicate(int[] nums) {
+        Map<Integer, Integer> mp = new HashMap<>();
+        for (int num : nums) {
+            if (mp.containsKey(num)) return true;
+            mp.put(num, num);
+        }
+        return false;
     }
 
 
