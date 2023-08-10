@@ -35,6 +35,41 @@ class Solution {
         return false;
     }
 
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+        boolean volta = BFS(matrix, 0, target);
+
+        return volta;
+
+    }
+
+    public boolean BFS(int[][] matrix, int i, int target) {
+
+        int len = matrix.length;
+
+        if (i > len-1) {
+            return false;
+        }
+
+        int depth = matrix[i].length;
+
+        if (target > matrix[i][depth-1] && i <= matrix.length-1) {
+            return BFS(matrix, i+1, target);
+        }
+
+        if (target <= matrix[i][depth-1]) {
+            for (int j = depth-1; j >= 0; j--) {
+                if (matrix[i][j] == target) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+
 
 
 
