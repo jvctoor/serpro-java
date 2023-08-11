@@ -1,6 +1,8 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 class Solution {
@@ -66,6 +68,25 @@ class Solution {
         }
 
         return false;
+    }
+
+    public double findMaxAverage(int[] nums, int k) {
+        List<Double> avgs = new ArrayList<>();
+        for (int i = 0 ; i + k <= nums.length ; i++) {
+            double total = 0;
+            for (int j = 0 ; j < k ; j++) {
+                total += nums[i + j];
+            }
+            double avg = total / k;
+            avgs.add(avg);
+        }
+        double maior = Double.NEGATIVE_INFINITY;
+        for (double numero : avgs) {
+            if (numero > maior) {
+                maior = numero;
+            }
+        }
+        return maior;
     }
 
 
