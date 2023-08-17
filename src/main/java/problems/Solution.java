@@ -103,9 +103,18 @@ class Solution {
         return true;
     }
 
-
-
-
+    public int addDigits(int num) {
+        while (num >= 10) {
+            String numStr = String.valueOf(num);
+            String[] digitsStr = numStr.split("");
+            int newNum = 0;
+            for (String digit : digitsStr) {
+                newNum += Integer.parseInt(digit);
+            }
+            num = newNum;
+        }
+        return num;
+    }
 
 
 }
