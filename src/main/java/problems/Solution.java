@@ -116,5 +116,47 @@ class Solution {
         return num;
     }
 
+    public int countStudents(int[] students, int[] sandwiches) {
+
+        Queue<Integer> fila = new LinkedList<>();
+        Stack<Integer> pilhaDeWhopper = new Stack<>();
+
+        // Populando a fila
+        for(int estudante: students) {
+            fila.add(estudante);
+        }
+
+        // Populando a pilha
+        for (int i = sandwiches.length-1 ; i >= 0 ; i--) {
+            pilhaDeWhopper.push(sandwiches[i]);
+        }
+
+        int alunosAble = 0;
+        int pointer = sandwiches.length;
+
+        while (fila.size() > 0) {
+
+            int sandubaAtual = pilhaDeWhopper.peek();
+            int alunoAtual = fila.poll();
+
+            if (alunoAtual == sandubaAtual) {
+                alunosAble++;
+                pointer = sandwiches.length;
+                pilhaDeWhopper.pop();
+            } else {
+                fila.offer(alunoAtual);
+                pointer--;
+                if (pointer == 0) {
+                    break;
+                }
+            }
+
+
+        }
+
+        return students.length - alunosAble;
+
+    }
+
 
 }
