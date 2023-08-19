@@ -158,5 +158,33 @@ class Solution {
 
     }
 
+    public int majorityElement(int[] nums) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int num : nums) {
+            if (map.containsKey(num)){
+                int contador = map.get(num) + 1;
+                map.put(num, contador);
+                continue;
+            }
+            map.put(num, 1);
+        }
+
+        int min = 0;
+        int keye = 0;
+
+        for (int key : map.keySet()) {
+
+            if (map.get(key) > min) {
+                min = map.get(key);
+                keye = key;
+            }
+
+        }
+
+        return keye;
+    }
+
 
 }
