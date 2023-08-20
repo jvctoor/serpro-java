@@ -186,5 +186,26 @@ class Solution {
         return keye;
     }
 
+    public boolean hasCycle(String head) {
+
+        HashSet<String> mp = new HashSet<>();
+        String currentNode = head;
+
+        while (currentNode != null && currentNode != null) {
+            if (mp.contains(currentNode)) {
+                return true;
+            }
+            mp.add(currentNode);
+            if (currentNode != null) {
+                currentNode = currentNode;
+            } else {
+                return false;
+            }
+        }
+
+        return false;
+
+    }
+
 
 }
