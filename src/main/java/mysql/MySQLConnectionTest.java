@@ -17,6 +17,8 @@ public class MySQLConnectionTest {
     // @BeforeAll @BeforeEach
     // @AfterAll @AfterEach
 
+    //Sur
+
     UsuarioDAO_JPA jpa_dao;
 
     @Test
