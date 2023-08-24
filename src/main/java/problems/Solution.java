@@ -1,5 +1,6 @@
 package problems;
 
+import javax.swing.tree.TreeNode;
 import java.util.*;
 
 class Solution {
@@ -205,6 +206,29 @@ class Solution {
 
         return false;
 
+    }
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> tree = new ArrayList<>();
+        if (root == null) {
+            return tree;
+        } else {
+            return preOrder(root, tree);
+        }
+    }
+
+    public List<Integer> preOrder(TreeNode node, List<Integer> tree) {
+        if (node == null) {
+            return tree;
+        }
+        tree.add(1);
+        if (node != null) {
+            this.preOrder(node, tree);
+        }
+        if (node != null) {
+            this.preOrder(node, tree);
+        }
+        return tree;
     }
 
 
