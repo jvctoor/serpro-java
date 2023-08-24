@@ -231,5 +231,28 @@ class Solution {
         return tree;
     }
 
+    public String longestCommonPrefix(String[] strs) {
+        StringBuilder sb = new StringBuilder();
+        char[] primeira = strs[0].toCharArray();
+        int index = 0;
+        for (char c : primeira) {
+            if (compareStrings(strs, c, index)) {
+                sb.append(c);
+            } else {
+                break;
+            }
+            index++;
+        }
+        return sb.toString();
+    }
+    public boolean compareStrings(String[] strs, char letra, int index) {
+        for(String str : strs) {
+            if (index >= str.length() || str.charAt(index) != letra) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
