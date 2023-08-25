@@ -274,5 +274,22 @@ class Solution {
         return 0;
     }
 
+    public int singleNumber(int[] nums) {
+        Map<Integer,Boolean> mySet = new HashMap<>();
+        for (int num : nums) {
+            if (mySet.containsKey(num)) {
+                mySet.put(num,true);
+                continue;
+            }
+            mySet.put(num,false);
+        }
+        for (int num : nums) {
+            if (mySet.get(num) == false) {
+                return num;
+            }
+        }
+        return 0;
+    }
+
 
 }
